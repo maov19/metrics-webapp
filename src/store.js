@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import assetsReducer from './assetsSlice';
+import assetsReducer from './components/redux/assetsSlice';
 
 export default configureStore({
   reducer: {

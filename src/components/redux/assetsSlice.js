@@ -14,19 +14,22 @@ const assetsSlice = createSlice({
     status: 'idle',
   },
   reducers: {},
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
-      .addCase(fetchAssets.pending, state => {
-        state.status = 'loading';
-      })
-      .addCase(fetchAssets.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.data = action.payload;
-      })
-      .addCase(fetchAssets.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.error.message;
-      });
+      .addCase(fetchAssets.pending, (state) => ({
+        ...state,
+        status: 'loading',
+      }))
+      .addCase(fetchAssets.fulfilled, (state, action) => ({
+        ...state,
+        status: 'succeeded',
+        data: action.payload,
+      }))
+      .addCase(fetchAssets.rejected, (state, action) => ({
+        ...state,
+        status: 'failed',
+        error: action.error.message,
+      }));
   },
 });
 
