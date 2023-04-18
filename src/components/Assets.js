@@ -71,17 +71,11 @@ function Assets() {
           <h2>
             {asset.name}
             {' '}
-            (
-            {asset.symbol}
-            )
           </h2>
           <p>
-            Price: $
+            USD
+            {' '}  
             {Number(asset.priceUsd).toFixed(2)}
-          </p>
-          <p>
-            Market Cap: $
-            {Number(asset.marketCapUsd).toFixed(2)}
           </p>
           <hr />
         </div>
