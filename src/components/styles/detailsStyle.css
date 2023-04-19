@@ -1,0 +1,46 @@
+.details-title {
+  margin: 10vh 0 5vh 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  color: white;
+  text-transform: uppercase;
+    
+}
+
+.details-container { 
+    color:white;
+    font-family: lato;  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100vw;
+  }
+
+  .asset-data {
+    font-size: 1rem;
+  }
+
+.details p {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 3rem;
+    width: 92vw;
+    padding: 4vw;
+    font-size: 1.1rem;
+  }
+
+  .details p:nth-child(even) {
+    background-color: #314e83;
+  }
+  
+  .details p:nth-child(odd) {
+    background-color: #4369B2;
+  }
+
+a {
+    color: white;
+}
