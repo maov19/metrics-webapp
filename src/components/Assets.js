@@ -23,7 +23,7 @@ function Assets() {
   }, [dispatch]);
 
   const handleClick = (asset) => {
-    navigate('/details', { state: { asset } });
+    navigate(`/details/${asset.name.toLowerCase()}`, { state: { asset } });
   };
 
   const handleFilterChange = (text) => {
