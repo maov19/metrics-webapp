@@ -4,6 +4,8 @@ import { fetchAssets } from './redux/assetsSlice';
 import { useNavigate } from 'react-router-dom';
 import Filter from './Filter';
 
+import './styles/assetsStyles.css'
+
 function Assets() {
   const dispatch = useDispatch();
   const assets = useSelector((state) => state.assets.data);
@@ -31,25 +33,36 @@ function Assets() {
   asset.name.toLowerCase().includes(filterText.toLowerCase())
 );
 
-  return (
-    <div>
+return (
+  <div>
+    <div className="header">
+      <h1 className="title">Crypto Stats</h1>
+      <p className="subtitle">
+        MOST RECENT PRICES
       <Filter filterText={filterText} onChange={handleFilterChange} />
+        </p>
+    </div>
+    <div className="container">
       {filteredAssets.map((asset) => (
-        <div key={asset.id} onClick={() => handleClick(asset)}>
-          <h2>
-            {asset.name}
-            {' '}
+        <div className="asset" key={asset.id} onClick={() => handleClick(asset)}>
+          <h2 className="symbol">
+            {asset.symbol}
           </h2>
-          <p>
-            USD
-            {' '}  
-            {Number(asset.priceUsd).toFixed(2)}
-          </p>
-          <hr />
+          <div className="asset-data"> 
+            <p>
+              {asset.name}
+            </p>
+            <p>
+              USD
+              {' '}  
+              {Number(asset.priceUsd).toFixed(2)}
+            </p>
+        </div>  
         </div>
       ))}
     </div>
-  );
+  </div>
+);
 }
 
 export default Assets;
