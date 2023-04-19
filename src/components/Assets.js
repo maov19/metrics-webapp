@@ -2,9 +2,14 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAssets } from './redux/assetsSlice';
 import { useNavigate } from 'react-router-dom';
-import Filter from './Filter';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
+
+import Filter from './Filter';
 import './styles/assetsStyles.css'
+
+const arrow = <FontAwesomeIcon icon={faRightFromBracket} />
 
 function Assets() {
   const dispatch = useDispatch();
@@ -18,7 +23,7 @@ function Assets() {
   }, [dispatch]);
 
   const handleClick = (asset) => {
-    navigate('/details', { state: { asset } });
+    navigate(`/details/${asset.name.toLowerCase()}`, { state: { asset } });
   };
 
   const handleFilterChange = (text) => {
@@ -45,6 +50,7 @@ return (
     <div className="container">
       {filteredAssets.map((asset) => (
         <div className="asset" key={asset.id} onClick={() => handleClick(asset)}>
+          <p className="arrow">{arrow}</p>
           <h2 className="symbol">
             {asset.symbol}
           </h2>
