@@ -45,19 +45,6 @@ body {
   font-size: 0.9rem;
   height: 4vh;
 }
-
-/* .asset:nth-child(1) {
-    margin: 0;
-    padding: 0;
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 25vh;
-  } */
-
 .asset {
   height: 24vh;
   margin: 0;
@@ -65,12 +52,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-
-  /* border: solid 1px blue; */
-
-  /* padding: 1rem; */
-
-  /* margin: 0.5rem; */
 }
 
 .asset:nth-child(4n+2),
